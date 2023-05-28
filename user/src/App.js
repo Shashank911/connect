@@ -1,32 +1,33 @@
 import React from 'react';
-import memories from './components/images/memories.png'
+import memories from './components/images/memories.png';
+import { Container, Typography, Grid } from '@material-ui/core';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 
+
 const App = () => {
   return (
-    <div className="container mx-auto max-w-lg">
+    <Container className="max-auto max-w-lg ">
       <header className="bg-gray-100 py-4 rounded-lg my-8 flex flex-row justify-center items-center">
-        <h2 className="text-4xl text-center text-blue-500">Memories</h2>
-        <img className="ml-4" src={memories} alt="memories" height="60" />
+        <Typography className="text-4xl text-center text-blue-500">Memories</Typography>
+        <img className="ml-4" src={memories} alt="icon" height="60" />
       </header>
 
       <div className="transition-all">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
+        <Container>
+          <Grid container justify="space-between" alignItems="stretch" spacing={3}>
+            <Grid item xs={12} sm={7}>
               <Posts />
-            </div>
-            <div>
-              <Form />
-            </div>
-          </div>
-        </div>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <Form  />
+            </Grid>
+          </Grid>
+        </Container>
       </div>
 
       {/* Rest of your content */}
-
-    </div>
+    </Container>
   );
 };
 
